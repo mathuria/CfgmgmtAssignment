@@ -1,11 +1,13 @@
-- name: Ansible Copy WAR CI to Remote
-  hosts: 127.0.0.1
-  tasks:
-    - name: copying war with playbook
-      become: true 
-      copy:
-        src: target/maven-web-application.war
-        dest: /opt/tomcat/webapps/
-        owner: root
-        group: root        
-        mode: 0644
+ - name: launch ec2 instance
+   hosts: 127.0.0.1
+   tasks:
+      - name: ec2 instance create
+        ec2:
+          key_name: newkey
+          instance_type: t2.micro
+          image: ami-02354e95b39ca8dec
+          region: us-east-1
+          count: 1
+          wait: yes
+          instance_tags:
+              Name: ansible
