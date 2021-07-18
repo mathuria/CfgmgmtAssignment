@@ -5,7 +5,7 @@
         ec2:
           key_name: assignment
           instance_type: t2.micro
-          image: ami-02354e95b39ca8dec
+          image: ami-0747bdcabd34c712a
           region: us-east-1
           count: 1
           wait: yes
