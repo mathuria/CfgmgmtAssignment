@@ -1,10 +1,10 @@
 ---
 # This playbook prints a simple debug message
-- name: Echo 
+- name: Maven build 
   hosts: 127.0.0.1
   connection: local
 
   tasks:
-  - name: Print debug message
+  - name: Maven compile
     debug:
-      msg: Hello, world!
+      msg: mvn clean package
