@@ -1,5 +1,5 @@
 - name: Deploy and restart
-  hosts: localhost
+  hosts: webcontainers
   
   tasks:
     - name: Deploy
