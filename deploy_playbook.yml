@@ -3,6 +3,8 @@
   
   tasks:
     - name: Deploy
+      become: true
+      become_user: tomcat
       copy:
         src: target/maven-web-application.war
         dest: /opt/tomcat/webapps/
