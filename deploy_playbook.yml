@@ -1,16 +1,12 @@
-- name: launch ec2 instance
-  hosts: 127.0.0.1
+- name: Deploy and restart
+  hosts: localhost
+  
   tasks:
-    - name: instance create
-      ec2:
-            aws_access_key: xxx
-            aws_secret_key: xxx
-            security_token: xxx
-            key_name: assignment
-            instance_type: t2.micro
-            image: ami-0747bdcabd34c712a
-            region: us-east-1
-            count: 1
-            wait: yes
-            instance_tags:
-                Name: ansible
+    - name: Deploy
+      become: true 
+      copy:
+        src: target/maven-web-application.war
+        dest: /opt/tomcat/webapps/
+        owner: tomcat
+        group: tomcat        
+        mode: 0644
