@@ -11,3 +11,7 @@
         owner: tomcat
         group: tomcat        
         mode: 0644
+
+    - name: Reboot the container
+      reboot:
+          msg: "Reboot initiated by Ansible"
