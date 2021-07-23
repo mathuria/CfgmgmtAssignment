@@ -1,8 +1,7 @@
 ---
 # This playbook prints a simple debug message
 - name: Maven build 
-  hosts: 127.0.0.1
-  connection: local
+  hosts: webcontainers
 
   tasks:
   - name: Maven compile
