@@ -3,7 +3,6 @@
   
   tasks:
     - name: Deploy
-      become: true
       copy:
         src: target/maven-web-application.war
         dest: /opt/tomcat/webapps/
